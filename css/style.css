@@ -90,7 +90,7 @@ body {
     
 }
 
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -102,7 +102,7 @@ body {
     justify-content: center;
 
     background-color: #e5e5e5;
-}
+} */
 
 .criacao-quiz {
     height: 100vw;
