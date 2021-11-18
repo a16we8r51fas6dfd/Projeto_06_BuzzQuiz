@@ -9,24 +9,3 @@ body {
     display: flex;
     justify-content: center;
 }
-
-.criacao-quiz {
-    background-color: red;
-    height: 256px;
-    width: 600px;
-}
-
-.criacao-quiz h2 {
-    padding-top: 140px;
-}
-
-.infos-basicas {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.escondido {
-    display: none;
-}
