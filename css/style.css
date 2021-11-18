@@ -5,6 +5,98 @@
     font-family: 'Roboto', sans-serif;
 }
 
+
+
+body {
+   
+    
+}
+/* TOPO */
+.topo{
+    width: 100%;
+    height: 69px;
+
+    background-color:#EC362D ;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+
+    margin-bottom: 77px;
+}
+.topo p{
+    font-weight: 700;
+    font-size: 37px;
+    color: white;    
+}
+
+.criarQuizz{
+    width: 1051px;
+    height: 181px;
+
+    background-color: white;
+
+    border-radius: 5px;
+    border: dashed #D4D4D4 2px;
+    margin: 0 auto;
+}
+.container{
+    width: 250px;
+    margin: 0 auto;
+    padding-top: 40px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.container button{
+    all: unset;
+    width: 136px;
+    border-radius: 50px;
+    background-color: white;
+    font-size: 21px;
+    text-align: center;
+    color: #EC362D;
+    border: dashed #EC362D;
+    cursor: pointer;
+
+   
+}
+.mensagemCriar{
+    width: auto;
+    margin: 0 auto;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    color:#B9B9B9;
+    padding-bottom: 30px;
+    text-align: center;
+   
+}
+
+.listaQuizzes{
+    width: 1065px;
+    height: 421px;
+    margin: 77px auto;
+
+    background-color: indigo ;
+}
+.tituloLista{
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -137,3 +229,6 @@ input {
 .escondido {
     display: none;
 }
+
+
+

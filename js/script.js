@@ -20,4 +20,3 @@ function prosseguirPerguntas() {
 function prosseguirNiveis() {
     console.log("eae bobao")
 }
-
