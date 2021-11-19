@@ -2,6 +2,8 @@ const criacaoQuizElemento = document.querySelector(".criacao-quiz")
 const criacaoPerguntasElemento = document.querySelector(".criacao-perguntas")
 let informacoesBasicasQuiz = {}
 
+
+
 function prosseguirPerguntas() {
     const infoTitulo = document.querySelector(".info-titulo").value
     const infoURL = document.querySelector(".info-url").value
