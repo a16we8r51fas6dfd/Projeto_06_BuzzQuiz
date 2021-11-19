@@ -42,7 +42,7 @@
 
     background-color: white;
 
-    overflow: hidden;
+    overflow: scroll;
 
     border-radius: 5px;
     margin: 0 auto;
@@ -123,7 +123,7 @@
     height: 421px;
     margin: 77px auto;
 
-    background-color: hotpink;
+
 
 }
 .tituloLista{
@@ -152,6 +152,8 @@
     height: 181px;
 
     border-radius: 5px;
+
+    background-image: linear-gradient(to bottom, white, black 120%);
  
 }
 
@@ -188,6 +190,23 @@
         width: 100%;
         margin: 14px auto;
        
+    }
+    .seusQuizzes{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .containerSeus{
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .seusQuizz{
+        width: 100%;
+        margin: 10px auto;
+    }
+    .tituloSeus{
+        width: 100%;
+        margin-left: 0;
     }
 }
 
