@@ -5,6 +5,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: #E5e5e5;
+}
+
 /* TOPO */
 .topo{
     width: 100%;
@@ -99,8 +103,8 @@ body {
 } */
 
 .criacao-quiz {
-    height: 100vw;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
