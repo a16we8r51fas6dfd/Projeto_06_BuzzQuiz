@@ -4,6 +4,7 @@ const perguntasElemento = document.querySelector(".perguntas")
 let informacoesBasicasQuiz = {}
 const infoPerguntas = document.querySelector(".info-qtd-perguntas").value
 const URLValidacao = /^(ftp|http|https):\/\/[^ "]+$/
+const corValidacao = /^#(?:[0-9a-fA-F]{3}){1,2}$/
 const homeElemento = document.querySelector(".home")
 
 
@@ -29,8 +30,9 @@ function prosseguirPerguntas() {
     const infoTitulo = document.querySelector(".info-titulo").value
     const infoURL = document.querySelector(".info-url").value
     const infoNiveis = document.querySelector(".info-qtd-niveis").value
+    const infoPerguntas = document.querySelector(".info-qtd-perguntas").value
 
-    if ((19 > infoTitulo.length && infoTitulo.length < 65) || infoPerguntas < 3 || infoNiveis < 2 || URLValidacao.test(infoURL) !== true) {
+    if ((19 > infoTitulo.length && infoTitulo.length < 65) || infoPerguntas < 1 || infoNiveis < 2 || URLValidacao.test(infoURL) !== true) {
         alert("respondeu o formulario errado doidão, lanse a braba novamente")
     } else {
         criacaoQuizElemento.classList.add("escondido")
@@ -81,7 +83,6 @@ function prosseguirNiveis() {
         const perguntaImagem3 = document.querySelector(`.pergunta${i}-imagem3`).value
         const perguntaTexto4 = document.querySelector(`.pergunta${i}-texto4`).value
         const perguntaImagem4 = document.querySelector(`.pergunta${i}-imagem4`).value
-        const corValidacao = /^[#][0-9A-F]{7}$/i
 
         if (perguntaTitulo.length < 20) {
             alert("Texto da pergunta deve ter no mínimo 20 caracteres")
@@ -99,7 +100,73 @@ function prosseguirNiveis() {
             alert("url da imagem 3 inválida")
         } else if (URLValidacao.test(perguntaImagem4) === false && perguntaTexto4 !== "") {
             alert("url da imagem 4 inválida")
-        } 
+        } else if (perguntaImagem4 === "" && perguntaTexto4 === ""){
+            informacoesBasicasQuiz.questions.push({
+                title: perguntaTitulo,
+                color: perguntaCor,
+                answers: [
+                    {
+                        text: perguntaTexto,
+                        image: perguntaImagem,
+                        isCorrectAnswer: true
+                    },
+                    {
+                        text: perguntaTexto2,
+                        image: perguntaImagem2,
+                        isCorrectAnswer: false
+                    },
+                    {
+                        text: perguntaTexto3,
+                        image: perguntaImagem3,
+                        isCorrectAnswer: false
+                    }
+                ]
+            })
+        } else if (perguntaImagem3 === "" && perguntaTexto3=== "") {
+            informacoesBasicasQuiz.questions.push({
+                title: perguntaTitulo,
+                color: perguntaCor,
+                answers: [
+                    {
+                        text: perguntaTexto,
+                        image: perguntaImagem,
+                        isCorrectAnswer: true
+                    },
+                    {
+                        text: perguntaTexto2,
+                        image: perguntaImagem2,
+                        isCorrectAnswer: false
+                    }
+                ]
+            })
+        } else {
+            informacoesBasicasQuiz.questions.push({
+                title: perguntaTitulo,
+                color: perguntaCor,
+                answers: [
+                    {
+                        text: perguntaTexto,
+                        image: perguntaImagem,
+                        isCorrectAnswer: true
+                    },
+                    {
+                        text: perguntaTexto2,
+                        image: perguntaImagem2,
+                        isCorrectAnswer: false
+                    },
+                    {
+                        text: perguntaTexto3,
+                        image: perguntaImagem3,
+                        isCorrectAnswer: false
+                    },
+                    {
+                        text: perguntaTexto4,
+                        image: perguntaImagem4,
+                        isCorrectAnswer: false
+                    }
+                ]
+            })
+        }
         
         console.log(informacoesBasicasQuiz)
 
