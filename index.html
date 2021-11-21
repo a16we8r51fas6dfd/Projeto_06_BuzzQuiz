@@ -32,6 +32,60 @@
             <div class="containerLista">
                 
             </div>
+    <div class="criarQuizz ">
+        <div class="container ">  
+            <div class="mensagemCriar ">
+                <span>Você não criou nenhum quizz ainda :( </span>
+            </div>
+            <button onclick="criarQuizz()">Criar Quizz</button>
+        </div>
+        
+    </div>
+    <div class="seusQuizzes escondido">
+        <div class="tituloSeus escondido">
+            <p>Seus Quizzes</p>
+            <ion-icon onclick="criarQuizz()" name="add-circle"></ion-icon>
+        </div>
+        <div class="containerSeus escondido">
+
+            <div class="seusQuizz">
+               
+            </div>
+            <div class="seusQuizz">
+                
+            </div>
+            <div class="seusQuizz">
+            
+            </div> 
+        </div>
+    </div>    
+    <div class="listaQuizzes ">
+        <p class="tituloLista">Todos os Quizzes</p>
+        <div class="containerLista">
+            <div class="C1">
+
+                <div class="quizz">
+                    
+                </div>
+                <div class="quizz">
+                   
+                </div>
+                <div class="quizz">
+                   
+                </div>  
+            </div>
+            <div class="C2">
+
+                <div class="quizz">
+                    
+                </div>
+                <div class="quizz">
+                   
+                </div>
+                <div class="quizz">
+                   
+                </div>  
+            </div>
         </div>
 
     </div>
@@ -56,7 +110,8 @@
 
         <button onclick="prosseguirNiveis()">Prosseguir para criar níveis</button>
     </div>
-
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

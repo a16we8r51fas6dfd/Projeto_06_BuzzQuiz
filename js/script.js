@@ -5,6 +5,24 @@ let informacoesBasicasQuiz = {}
 const infoPerguntas = document.querySelector(".info-qtd-perguntas").value
 const URLValidacao = /^(ftp|http|https):\/\/[^ "]+$/
 
+
+function quizz(dados){
+
+
+}
+
+obterQuizzes();
+function obterQuizzes(){
+    const promessa = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
+
+    promessa.then(console.log("deuboa"))
+    promessa.catch(console.log("deuruim"))
+}
+
+function criarQuizz(){
+    console.log('teste');
+}
+
 function prosseguirPerguntas() {
     const infoTitulo = document.querySelector(".info-titulo").value
     const infoURL = document.querySelector(".info-url").value

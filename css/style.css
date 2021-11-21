@@ -37,7 +37,54 @@ body {
     border-radius: 5px;
     border: dashed #D4D4D4 2px;
     margin: 0 auto;
+
+    cursor: pointer;
 }
+.seusQuizzes{
+    width: 1065px;
+    height: 250px;
+
+    background-color: white;
+
+    overflow: scroll;
+
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.containerSeus{
+
+    margin: 0 auto;
+    width: 1065px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: auto;
+
+}
+.seusQuizz{
+    margin-left: 14px;
+    background-color: green;
+    width: 340px;
+    height: 181px;
+
+    border-radius: 5px;
+ 
+}
+.tituloSeus{
+    display: flex;
+    align-items: center;
+
+    margin-left: 14px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.tituloSeus ion-icon{
+    color: #EC362D;
+    width: 31px;
+    height: 31px;
+    cursor: pointer;
+}
+
 .container{
     width: 250px;
     margin: 0 auto;
@@ -80,13 +127,94 @@ body {
     height: 421px;
     margin: 77px auto;
 
-    background-color: indigo ;
+
+
 }
 .tituloLista{
     font-weight: 700;
     font-size: 20px;
+    margin-left: 14px;
     
 }
+
+
+.C1{
+    display: flex;
+}
+
+.C2{
+    display: flex;
+}
+.quizz{
+    background-color: green;
+    
+    margin-left: 14px;
+    margin-bottom: 14px;
+
+
+    width: 341px;
+    height: 181px;
+
+    border-radius: 5px;
+
+    background-image: linear-gradient(to bottom, white, black 120%);
+ 
+}
+
+
+@media (max-width: 1100px){
+
+    .C1{
+        flex-direction: column;
+        width: 100%;
+    }
+    .C2{
+        flex-direction: column;
+        width: 100%;
+    }
+    .criarQuizz {
+        width: 100%;
+    }
+    .listaQuizzes{
+        width: 100%;
+    }
+    .topo{
+        width: 100%;
+    }
+    .containerLista{
+        width: 100%;
+        margin: 0 auto;
+     
+    }
+    .tituloLista{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .quizz{
+        width: 100%;
+        margin: 14px auto;
+       
+    }
+    .seusQuizzes{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .containerSeus{
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .seusQuizz{
+        width: 100%;
+        margin: 10px auto;
+    }
+    .tituloSeus{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
 
 /* * {
     box-sizing: border-box;
