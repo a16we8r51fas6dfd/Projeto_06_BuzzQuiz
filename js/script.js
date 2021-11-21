@@ -4,6 +4,7 @@ const perguntasElemento = document.querySelector(".perguntas")
 let informacoesBasicasQuiz = {}
 const infoPerguntas = document.querySelector(".info-qtd-perguntas").value
 const URLValidacao = /^(ftp|http|https):\/\/[^ "]+$/
+const homeElemento = document.querySelector(".home")
 
 
 function quizz(dados){
@@ -20,7 +21,8 @@ function obterQuizzes(){
 }
 
 function criarQuizz(){
-    console.log('teste');
+    homeElemento.classList.add("escondido")
+    criacaoQuizElemento.classList.remove("escondido")
 }
 
 function prosseguirPerguntas() {
@@ -63,6 +65,8 @@ function prosseguirPerguntas() {
                 <input class="pergunta${i}-imagem4" type="text" placeholder="URL da imagem">
             </div>`
     }
+
+    console.log(informacoesBasicasQuiz)
 }
 
 function prosseguirNiveis() {
