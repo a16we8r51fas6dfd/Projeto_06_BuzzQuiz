@@ -336,6 +336,10 @@ input {
     color: #000000;
 }
 
+.espaco {
+    margin-bottom: 20px;
+}
+
 .criacao-perguntas button {
     height: 54px;
     width: 368px;

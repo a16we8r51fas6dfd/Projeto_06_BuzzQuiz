@@ -47,7 +47,7 @@ function prosseguirPerguntas() {
 
     for(let i = 1; i <= infoPerguntas; i++) {
         perguntasElemento.innerHTML += `
-            <div class="pergunta${i} pergunta">
+            <div class="pergunta${i} pergunta recolhido">
                 <h3>Pergunta ${i}</h3>
                 <input class="pergunta${i}-titulo" type="text" placeholder="Texto da pergunta">
                 <input class="pergunta${i}-cor" type="text" placeholder="Cor de fundo da pergunta">
@@ -58,10 +58,10 @@ function prosseguirPerguntas() {
         
                 <h3>Respostas incorretas</h3>
                 <input class="pergunta${i}-texto2" type="text" placeholder="Resposta incorreta 1">
-                <input class="pergunta${i}-imagem2" type="text" placeholder="URL da imagem">
+                <input class="pergunta${i}-imagem2 espaco" type="text" placeholder="URL da imagem">
         
                 <input class="pergunta${i}-texto3" type="text" placeholder="Resposta incorreta 2">
-                <input class="pergunta${i}-imagem3" type="text" placeholder="URL da imagem">
+                <input class="pergunta${i}-imagem3 espaco" type="text" placeholder="URL da imagem">
         
                 <input class="pergunta${i}-texto4" type="text" placeholder="Resposta incorreta 3">
                 <input class="pergunta${i}-imagem4" type="text" placeholder="URL da imagem">
