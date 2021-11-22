@@ -3,11 +3,6 @@ const criacaoPerguntasElemento = document.querySelector(".criacao-perguntas")
 let informacoesBasicasQuiz = {}
 
 
-function quizz(dados){
-
-
-}
-
 obterQuizzes();
 function obterQuizzes(){
     const promessa = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
