@@ -10,66 +10,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <title>BuzzQuizz</title>
 </head>
+
 <body>
     <!-- tela 1 -->
-    <div class="topo">
-        <p>BuzzQuizz</p>
-    </div>
-    <div class="criarQuizz">
-        <div class="container  ">  
-            <div class="mensagemCriar  ">
-                <span>Você não criou nenhum quizz ainda :( </span>
+    <div class="home">
+
+        <div class="topo ">
+            <p>BuzzQuizz</p>
+        </div>
+        <div class="criarQuizz ">
+            <div class="container">  
+                <div class="mensagemCriar">
+                    <span>Você não criou nenhum quizz ainda :( </span>
+                </div>
+                <button onclick="criarQuizz()">Criar Quizz</button>
             </div>
-            <button onclick="criarQuizz()">Criar Quizz</button>
+            
         </div>
         
-    </div>
-    <div class="seusQuizzes escondido">
-        <div class="tituloSeus escondido">
-            <p>Seus Quizzes</p>
-            <ion-icon onclick="criarQuizz()" name="add-circle"></ion-icon>
-        </div>
-        <div class="containerSeus escondido">
-
-            <div class="seusQuizz">
-               
+        <div class="seusQuizzes escondido">
+            <div class="tituloSeus ">
+                <p>Seus Quizzes</p>
+                <ion-icon onclick="criarQuizz()" name="add-circle"></ion-icon>
             </div>
-            <div class="seusQuizz">
+            <div class="containerSeus ">
                 
-            </div>
-            <div class="seusQuizz">
             
-            </div> 
-        </div>
-    </div>    
-    <div class="listaQuizzes ">
-        <p class="tituloLista">Todos os Quizzes</p>
-        <div class="containerLista">
-            <div class="C1">
-
-                <div class="quizz">
-                    
-                </div>
-                <div class="quizz">
-                   
-                </div>
-                <div class="quizz">
-                   
-                </div>  
-            </div>
-            <div class="C2">
-
-                <div class="quizz">
-                    
-                </div>
-                <div class="quizz">
-                   
-                </div>
-                <div class="quizz">
-                   
-                </div>  
             </div>
         </div>
+        
+        <div class="listaQuizzes">
+            <p class="tituloLista ">Todos os Quizzes</p>
+            <div class="containerLista">
+                <div class="C1 home">
+                    
+                    
+                </div>
+                <div  class="C2 home">
+                    
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="homeRespondendoQuizz escondido">
+        <div class="topo">
+            <p>BuzzQuizz</p>
+        </div>
+        <div class="tituloQuizz"> 
+                    
+        </div>
+        <div class="containerRespondendoQuizz">
+            
+        </div>
+
+    </div>
+        
     </div>
     
     <div class="criacao-quiz escondido">
@@ -85,64 +82,9 @@
 
     <div class="criacao-perguntas escondido">
         <h2>Crie suas perguntas</h2>
-        <div class="pergunta">
-            <h3>Pergunta 1</h3>
-            <input type="text" placeholder="Texto da pergunta">
-            <input type="text" placeholder="Cor de fundo da pergunta">
 
-            <h3>Resposta correta</h3>
-            <input type="text" placeholder="Resposta correta">
-            <input type="text" placeholder="URL da imagem">
-
-            <h3>Respostas incorretas</h3>
-            <input type="text" placeholder="Resposta incorreta 1">
-            <input type="text" placeholder="URL da imagem">
-
-            <input type="text" placeholder="Resposta incorreta 2">
-            <input type="text" placeholder="URL da imagem">
-
-            <input type="text" placeholder="Resposta incorreta 3">
-            <input type="text" placeholder="URL da imagem">
-        </div>
-
-        <div class="pergunta">
-            <h3>Pergunta 1</h3>
-            <input type="text" placeholder="Texto da pergunta">
-            <input type="text" placeholder="Cor de fundo da pergunta">
-
-            <h3>Resposta correta</h3>
-            <input type="text" placeholder="Resposta correta">
-            <input type="text" placeholder="URL da imagem">
-
-            <h3>Respostas incorretas</h3>
-            <input type="text" placeholder="Resposta incorreta 1">
-            <input type="text" placeholder="URL da imagem">
-
-            <input type="text" placeholder="Resposta incorreta 2">
-            <input type="text" placeholder="URL da imagem">
-
-            <input type="text" placeholder="Resposta incorreta 3">
-            <input type="text" placeholder="URL da imagem">
-        </div>
-
-        <div class="pergunta">
-            <h3>Pergunta 1</h3>
-            <input type="text" placeholder="Texto da pergunta">
-            <input type="text" placeholder="Cor de fundo da pergunta">
-
-            <h3>Resposta correta</h3>
-            <input type="text" placeholder="Resposta correta">
-            <input type="text" placeholder="URL da imagem">
-
-            <h3>Respostas incorretas</h3>
-            <input type="text" placeholder="Resposta incorreta 1">
-            <input type="text" placeholder="URL da imagem">
-
-            <input type="text" placeholder="Resposta incorreta 2">
-            <input type="text" placeholder="URL da imagem">
-
-            <input type="text" placeholder="Resposta incorreta 3">
-            <input type="text" placeholder="URL da imagem">
+        <div class="perguntas">
+            
         </div>
 
         <button onclick="prosseguirNiveis()">Prosseguir para criar níveis</button>
