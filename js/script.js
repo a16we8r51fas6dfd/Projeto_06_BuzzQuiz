@@ -21,6 +21,8 @@ const homeElementoRespondendo = document.querySelector(".homeRespondendoQuizz")
 
 const infoURL = document.querySelector(".info-url").value
 
+let quizzIdData
+
 
 
 
@@ -35,10 +37,12 @@ function obterQuizzes(){
 function renderizarquizzes(resposta){
 
     const quizz = resposta.data;
+
+    console.log(resposta.data[1].id)
     const quizzes = document.querySelector(".listaQuizzes .containerLista .C1")
     for(let i=0; i<3; i++){
         quizzes.innerHTML += `
-        <div onclick="abrirQuizz(this)" class="quizz" id = "${quizz.id}">
+        <div onclick="abrirQuizz(this)" class="quizz" id = "${resposta.data[i].id}">
         <img src="${quizz[i].image}">
              <div class="title">
         ${quizz[i].title}
@@ -57,21 +61,28 @@ function renderizarquizzes(resposta){
         </div>
         `
     }
+
+    quizzIdData = resposta.data
+
+
+
+
 }
-function abrirQuizz(){
+function abrirQuizz(quizzIdData){
         homeElemento.classList.add("escondido");
         homeElementoRespondendo.classList.remove("escondido");
 
-        console.log("id")
+        console.log(quizzIdData)
 
-        const promessa = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${quizz.id}`);
+        const promessa = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${quizzIdData.id}`);
 
         promessa.then(renderizarquizz);
-        promessa.catch(console.log("erro"))
+        /* promessa.catch(console.log("erro")) */
 }
 
 function renderizarquizz(resposta){
     const quizz = resposta.data;
+    console.log(quizz)
    
     const enviarQuizz = document.querySelector(".homeRespondendoQuizz .tituloQuizz");
     enviarQuizz.innerHTML += `
@@ -85,7 +96,7 @@ function renderizarquizz(resposta){
     // document.getElementById("1").style.backgroundSize = "cover";
 
     const pergunta = document.querySelector(".homeRespondendoQuizz .containerRespondendoQuizz")
-    for(let i=0; i<8; i++){
+    for(let i=0; i<quizz.questions.length-1; i++){
         pergunta.innerHTML += `
         <div class="perguntaRespondendoQuizz">
         <p>${quizz.questions[i].title}</p>
