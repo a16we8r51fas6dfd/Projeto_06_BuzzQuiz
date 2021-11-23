@@ -483,9 +483,127 @@ input {
     color: #fff5f4;
 }
 
-.escondido {
-    display: none;
+.criacao-niveis {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-top: 132px;
+    margin-bottom: 14px;
+
+}
+
+.criacao-niveis h2 {
+    margin-bottom: 36px;
+}
+
+.nivel-header {
+    height: 74px;
+    width: 564px;
+
+    background-color: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nivel-header ion-icon {
+    font-size: 26px;
+    color: #000000;
+}
+
+.nivel {
+    height: 316px;
+    width: 600px;
+
+    padding: 0px 20px 27px 16px;
+
+    background-color: #ffffff;
+
+    margin-bottom: 24px;
+}
+
+.nivel h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.nivel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.criacao-niveis button {
+    height: 54px;
+    width: 368px;
+
+    border: none;
+    border-radius: 15px;
+
+    margin-top: 80px;
+
+    background-color: #EC362D;
+
+    font-size: 21px;
+    font-weight: 400;
+    color: #fff5f4;
 }
 
 
+.nivel-content.escondido {
+    height: 0px;
+}
 
+.criacao-sucesso {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.criacao-sucesso h2 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.quiz-btn {
+    height: 44px;
+    width: 220px;
+    
+    border: none;
+    border-radius: 15px;
+    
+    margin-top: 45px;
+    margin-bottom: 9px;
+    
+    background-color: #EC362D;
+    
+    font-size: 21px;
+    font-weight: 400;
+    color: #fff5f4;
+}
+
+.home-btn {
+    height: 44px;
+    width: 220px;
+    
+    border: none;
+    border-radius: 15px;
+    
+    font-size: 21px;
+    font-weight: 400;
+    color: #818181;
+}
+
+.escondido {
+    display: none;
+}
