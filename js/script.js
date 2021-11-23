@@ -35,7 +35,7 @@ function renderizarquizzes(resposta){
     const quizzes = document.querySelector(".listaQuizzes .containerLista .C1")
     for(let i=0; i<3; i++){
         quizzes.innerHTML += `
-        <div onclick="abrirQuizz()" class="quizz">
+        <div onclick="abrirQuizz(this)" class="quizz" id = "${quizz.id}">
         <img src="${quizz[i].image}">
              <div class="title">
         ${quizz[i].title}
@@ -46,7 +46,7 @@ function renderizarquizzes(resposta){
     const quizzes2 = document.querySelector(".listaQuizzes .containerLista .C2")
     for(let i=0; i<3; i++){
         quizzes2.innerHTML += `
-        <div onclick="abrirQuizz()" class="quizz">
+        <div onclick="abrirQuizz(this)" class="quizz" id = "${quizz.id}">
         <img  src="${quizz[i].image}">
         <div class="title">
         ${quizz[i].title}
@@ -59,9 +59,12 @@ function abrirQuizz(){
         homeElemento.classList.add("escondido");
         homeElementoRespondendo.classList.remove("escondido");
 
-        const promessa = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/2');
+        console.log("id")
+
+        const promessa = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${quizz.id}`);
 
         promessa.then(renderizarquizz);
+        promessa.catch(console.log("erro"))
 }
 
 function renderizarquizz(resposta){
@@ -74,7 +77,7 @@ function renderizarquizz(resposta){
           <img src="${quizz.image}">          
     </div>`
     // <img src="${quizz.image}">  
-    // document.getElementById("1").style.backgroundImage = "url('`${quizz.image}`')";
+    // document.getElementById("1").style.backgroundImage = "url(`${quizz.image}`)";
     // document.getElementById("1").style.backgroundRepeat = "no-repeat";
     // document.getElementById("1").style.backgroundSize = "cover";
 
