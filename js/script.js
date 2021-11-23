@@ -19,6 +19,9 @@ const homeElemento = document.querySelector(".home")
 const sucessoQuiz = document.querySelector(".criacao-sucesso")
 const homeElementoRespondendo = document.querySelector(".homeRespondendoQuizz")
 
+const infoURL = document.querySelector(".info-url").value
+
+
 
 
 obterQuizzes();
@@ -340,14 +343,21 @@ function finalizarQuiz() {
             .then(sucessoPost)
             .catch(console.log("deu doidera"))
 
-        criacaoNiveisElemento.classList.add("escondido")
-        sucessoQuiz.classList.remove("escondido")
-
     }
 }
 
 function sucessoPost(resposta) {
-    console.log(resposta.data)
+
+    const infoURL = document.querySelector(".info-url").value
+    
+
+
+    criacaoNiveisElemento.classList.add("escondido")
+    sucessoQuiz.classList.remove("escondido")
+
+    const sucessoImagem = document.querySelector(".sucesso-imagem")
+
+    sucessoImagem.innerHTML = `<img src="${infoURL}">`
 }
 
 function voltarHome() {

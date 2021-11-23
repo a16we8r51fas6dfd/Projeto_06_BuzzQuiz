@@ -441,6 +441,11 @@ input {
     color: #000000;
 }
 
+.perguntas {
+    display: flex;
+    flex-direction: column;
+}
+
 .pergunta {
     height: 825px;
     width: 600px;
@@ -573,6 +578,16 @@ input {
     font-size: 23px;
     font-weight: 700;
     color: #000000;
+    
+    margin-top: 71px;
+    margin-bottom: 46px;
+}
+
+.sucesso-imagem img {
+    height: 266px;
+    width: 500px;
+
+    border-radius: 5px;
 }
 
 .quiz-btn {
@@ -606,4 +621,28 @@ input {
 
 .escondido {
     display: none;
+}
+
+@media (max-width: 1100px) {
+    .criacao-quiz button, .criacao-perguntas button, .criacao-niveis button {
+        width: 323px;
+    }
+
+    .infos-basicas {
+        width: 100%;
+    }
+
+    .pergunta {
+        margin-top: 0;
+    }
+
+    .perguntas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+
+        background-color: #ffffff;
+    }
 }
