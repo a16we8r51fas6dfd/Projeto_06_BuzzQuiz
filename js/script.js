@@ -23,6 +23,7 @@ const infoURL = document.querySelector(".info-url").value
 
 let quizzIdData
 
+let contadorRespostas = 0
 
 
 
@@ -74,7 +75,7 @@ function abrirQuizz(quizzIdData){
 
         console.log(quizzIdData)
 
-        const promessa = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${quizzIdData.id}`);
+        const promessa = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/2`);
 
         promessa.then(renderizarquizz);
         /* promessa.catch(console.log("erro")) */
@@ -83,6 +84,8 @@ function abrirQuizz(quizzIdData){
 function renderizarquizz(resposta){
     const quizz = resposta.data;
     console.log(quizz)
+    console.log(quizz.questions)
+    console.log(quizz.questions[0].answers)
    
     const enviarQuizz = document.querySelector(".homeRespondendoQuizz .tituloQuizz");
     enviarQuizz.innerHTML += `
@@ -96,38 +99,76 @@ function renderizarquizz(resposta){
     // document.getElementById("1").style.backgroundSize = "cover";
 
     const pergunta = document.querySelector(".homeRespondendoQuizz .containerRespondendoQuizz")
-    for(let i=0; i<quizz.questions.length-1; i++){
+    for(let i=0; i<quizz.questions.length; i++){
         pergunta.innerHTML += `
-        <div class="perguntaRespondendoQuizz">
+        <div class="perguntaRespondendoQuizz${i} perguntaRespondendoQuizz" >
+            <p style="background-color:${quizz.questions[i].color}">${quizz.questions[i].title}</p>
+
+            <div class="respostas">
+            
+            </div>
+            
+        </div>
+
+
+        `; 
+        const respostasRandomizadas = quizz.questions[i].answers.sort(()=> Math.random()-0.5)
+
+        for (let j = 0; j < respostasRandomizadas.length; j++) {
+            const containerResposta = document.querySelector(`.perguntaRespondendoQuizz${i} .respostas`)
+
+
+            console.log(containerResposta)
+            containerResposta.innerHTML += `
+            <div onclick="selecionarResposta(this)" class="resposta">
+                <img src="${respostasRandomizadas[j].image}">
+                <p>${respostasRandomizadas[j].text}</p>
+            </div>
+            `
+        }
+
+
+
+        /* for (let j = 0; j < quizz.questions[i].answers.length; j++) {
+        pergunta.innerHTML += `
+        <div class="perguntaRespondendoQuizz${i} perguntaRespondendoQuizz">
         <p>${quizz.questions[i].title}</p>
+
+        <div class="resposta${i} respostas">
+        
+        </div>
         
         </div>`
-        const respostas = document.querySelector(".homeRespondendoQuizz .containerRespondendoQuizz")
-        respostas.innerHTML += ` 
-        <div class="containerRespostas">
-        <div onclick="selecionarResposta(this)" class="respostas">
-        <img src="${quizz.questions[i].answers[0].image}">
-        <p>${quizz.questions[i].answers[0].text}</p>
-        </div>
-        <div onclick="selecionarResposta(this)" class="respostas">
-        <img src="${quizz.questions[i].answers[1].image}">
-        <p>${quizz.questions[i].answers[1].text}</p>
-        </div>
-        <div onclick="selecionarResposta(this)" class="respostas">
-        <img src="${quizz.questions[i].answers[2].image}">
-        <p>${quizz.questions[i].answers[2].text}</p>
-        </div>
-        <div onclick="selecionarResposta(this)" class="respostas">
-        <img src="${quizz.questions[i].answers[3].image}">
-        <p>${quizz.questions[i].answers[3].text}</p>
-        </div>
-        `   
-    }
+
+        console.log(quizz.questions[i])
+        console.log(quizz.questions[i].answers)
+        
+    
+           /*  console.log(quizz.questions[i].answers.length)
+    
+            const resposta = document.querySelector(`.resposta${j}`)
+    
+            resposta.innerHTML += ` 
+            <div class="containerRespostas">
+                <div onclick="selecionarResposta(this)" class="respostas">
+                <img src="${quizz.questions[i].answers[j].image}">
+                <p>${quizz.questions[i].answers[j].text}</p>
+            </div>` */
+    } 
+    /* for(let i=0; i<quizz.questions.length; i++) {
+        
+    } */
+
 }
 
 function selecionarResposta(resposta){
     
-        resposta.classList.add("selecionado");
+    resposta.classList.add("selecionado");
+
+    contadorRespostas ++
+    console.log(contadorRespostas)
+
+
     
 }
 
